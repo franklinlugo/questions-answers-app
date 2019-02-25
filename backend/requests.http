@@ -1,0 +1,35 @@
+#############################
+### retrieve al questions ###
+#############################
+GET http://localhost:8081/ HTTP/1.1
+
+####################################
+### retrieve a specific question ###
+####################################
+GET http://localhost:8081/5c7345f4685b8350cca8faaf HTTP/1.1
+
+#############################
+### insert a new question ###
+#############################
+POST http://localhost:8081/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "fourth question",
+    "description": "this is the fourth question"
+}
+
+#######################################
+### insert a new answer to question ###
+#######################################
+POST http://localhost:8081/answer/5c734be2697984108ae71ae9 HTTP/1.1
+content-type: application/json
+
+{
+    "answer": "third answer for the first question"
+}
+
+###############################
+### delete a question by id ###
+###############################
+DELETE http://localhost:8081/5c734be2697984108ae71ae9 HTTP/1.1
