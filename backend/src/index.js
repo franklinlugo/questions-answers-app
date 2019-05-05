@@ -1,19 +1,19 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import helmet from "helmet";
-import morgan from "morgan";
-import mongoose from "mongoose";
-import "dotenv/config";
+import 'dotenv/config';
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import router from './routes/question';
 
-import router from "./routes/question";
 // conection to database
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  console.log("connected to database");
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('connected to database');
 });
 
 // express app
@@ -29,8 +29,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // log http request
-app.use(morgan("combined"));
+app.use(morgan('combined'));
 
-app.use("/", router);
+app.use('/', router);
 
 app.listen(process.env.PORT);
