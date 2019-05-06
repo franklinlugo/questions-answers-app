@@ -31,6 +31,6 @@ app.use(cors());
 // log http request
 app.use(morgan('combined'));
 
-app.use('/', router);
+app.use('/api', router);
 
 app.listen(process.env.PORT);

@@ -1,28 +1,28 @@
 #############################
 ### retrieve al questions ###
 #############################
-GET http://localhost:8081/ HTTP/1.1
+GET http://localhost:8081/api HTTP/1.1
 
 ####################################
 ### retrieve a specific question ###
 ####################################
-GET http://localhost:8081/5c7345f4685b8350cca8faaf HTTP/1.1
+GET http://localhost:8081/api/5c734c12697984108ae71aec HTTP/1.1
 
 #############################
 ### insert a new question ###
 #############################
-POST http://localhost:8081/ HTTP/1.1
+POST http://localhost:8081/api HTTP/1.1
 content-type: application/json
 
 {
-    "title": "fourth question",
-    "description": "this is the fourth question"
+    "title": "fifth question",
+    "description": "this is the fifth question"
 }
 
 #######################################
 ### insert a new answer to question ###
 #######################################
-POST http://localhost:8081/answer/5c734be2697984108ae71ae9 HTTP/1.1
+POST http://localhost:8081/api/answer/5c734be2697984108ae71ae9 HTTP/1.1
 content-type: application/json
 
 {
@@ -32,4 +32,4 @@ content-type: application/json
 ###############################
 ### delete a question by id ###
 ###############################
-DELETE http://localhost:8081/5c734c1a697984108ae71aed HTTP/1.1
+DELETE http://localhost:8081/api/5ccfc073b2e46958d82afc5a HTTP/1.1
